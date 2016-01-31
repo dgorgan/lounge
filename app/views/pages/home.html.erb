@@ -1,0 +1,36 @@
+<div class="jumbotron text-center">
+  <h1 style="color:brown">Lounge</h1>
+  <h3 style="color:white">Discover new hobbies and discuss them with your friends!<h3>
+</div>
+<div class="row">
+  <% if user_signed_in? %>
+    <div class="col-md-3 text-center">
+      <div class="well">
+        <h2 class="text-center">Your Profile</h2>
+        <% if current_user.profile %>
+          <%= link_to "Edit your profile", edit_user_profile_path(user_id: current_user.id), class: 'btn btn-block btn-default' %>
+          <%= link_to "View your profile", user_path(current_user), class: 'btn btn-block btn-primary' %>
+        <% else %>
+          <p>Make a lounge profile<p>
+          <%= link_to "Create your profile", new_user_profile_path(current_user), class: 'btn btn-default btn-lg btn-block'%>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-9 text-center">
+      <div class="well">
+        <h2 class="text-center">Lounge</h2>
+        <p>Visit the lounge to discuss your hobbies!<p>
+        <%= link_to "Visit the community", users_path, class: 'btn btn-default btn-lg' %>
+      </div>
+    </div>
+  <% else %>
+    <div class="col-md-12 text-center">
+      <div class="well">
+        <h2 class="text-center">Create account</h2>
+        <h4>Sign up for free for a lounge account!</h4>
+        <br/>
+        <%= link_to "Sign up for lounge", new_user_registration_path(plan: @plan.id), class: 'btn btn-primary btn-lg btn-block create-profile' %>
+      </div>
+    </div>
+  <% end %>
+</div>

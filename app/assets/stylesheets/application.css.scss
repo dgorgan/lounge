@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  background: url('https://images.unsplash.com/photo-1429623077761-9635d93ddd02?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=b08ec959baa8302f09c0bf8d8f10d597');
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: white;
+}
+
+.jumbotron, .well, .btn, .well.row.white-bg {
+  color: white;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+.jumbotron h1 {
+  font-size: 72px;
+  font-family: 'Poiret One', cursive;
+  border-bottom: 1px solid brown;
+}
+
+
+.logo {
+  font-family: 'Poiret One', cursive;
+}
+
+.create-profile {
+  border: 1px solid brown;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+}
+
+.profile-image {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+}

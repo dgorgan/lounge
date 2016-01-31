@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1 class="text-center">The Lounge</h1>
+    <p class="text-center">Welcome to the lounge! Discover other loungers here<p>
+    <ul class="list-unstyled">
+      <% @users.each do |user| %>
+        <% if user.profile %>
+        <li>
+          <div class="well row <%= cycle('white-bg', '') %>">
+            <div class="col-sm-4 text-center">
+                  <%= image_tag user.profile.image_url, class: 'profile-images', :style => "height:128px;width:128px;border-radius:50%" %>
+            </div>
+
+            <div>
+              <%= link_to user do %>
+                <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
+              <% end %>
+              <p>
+                <%= user.profile.hobby %>
+                <% if user.plan_id == 1 %>
+                  <span class="label label-danger">Lounger</span>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
